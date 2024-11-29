@@ -27,7 +27,7 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
                 continue
             avg_quality = sum(qualities)/ len(qualities)
 
-            if avg_quality < quality_threshold:
+            if avg_quality <= quality_threshold:
                 continue
             
             # Check sequence length
@@ -37,7 +37,7 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
 
             # Check GC content
             gc_content = calculate_gc_content(str(record.seq))
-            if gc_content < gc_min or gc_content > gc_max:
+            if gc_content <= gc_min or gc_content >= gc_max:
                 continue
             
             # Write to output if all conditions are met
