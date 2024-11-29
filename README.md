@@ -20,7 +20,7 @@ filterfastq/
 │   │   └── statistic.py
 │   └── filter/
 │       └── filter.py
-│── test_output # Generate from ont.exp2.fastq (excluded from Git)
+│── test_output # Generated from ont.exp2.fastq (excluded from Git)
 │   │── original_statistic.csv
 │   │── filtered_statistic.csv
 │   │── filtered.fastq
