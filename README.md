@@ -39,7 +39,7 @@ filterfastq/
 
 **Quality score Filtering:** Eliminate sequences that do not meet a minimum average quality score. The default is 20.
 
-**Sequence Length Filtering:** This filter Eliminates sequences that do not meet the minimum sequence length, which is 50 by default.
+**Sequence Length Filtering:** Eliminates sequences that do not meet the minimum sequence length, which is 50 by default.
 
 **GC Content Filtering:** Eliminate sequences that have a GC percentage above or below the appropriate range. The default range is between 30 % and 60%.
 
