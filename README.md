@@ -2,7 +2,7 @@
 
 ## Description
 
-FilterFASTQ is a Python program designed to filter and analyze FASTQ data effectively. It provides a statistical visualization to differentiate between the original and the filtered file by using a pie chart and generating  CSV files. In addition, it can identified by a group of barcodes or barcode sequences as the users desire. At the end of the program, it generates a new FASTQ file that passes the biological statistic criteria.
+FilterFASTQ is a Python program designed to filter and analyze FASTQ data effectively. It provides a statistical visualization to differentiate between the original and the filtered file by using a pie chart and generating  CSV files. In addition, it can be identified by a group of barcodes or barcode sequences as the user's preference. At the end of the program, it generates a new FASTQ file that passes the biological statistic criteria.
 
 
 ## Features
@@ -62,6 +62,56 @@ FilterFASTQ is a Python program designed to filter and analyze FASTQ data effect
     ```bash
     pip install [specific package name]
     ```
+
+## Usage
+
+### Running the Program
+
+You can run the `filterfastq` tool using the provided launcher script or directly via the `main.py` script.
+
+#### Option 1: Using the Launcher Script
+
+1. **Ensure the Virtual Environment is Activated**
+
+    ```bash
+    source biopython_env/bin/activate
+    ```
+
+2. **Run the Launcher Script**
+
+    ```bash
+    ./filterfastq -i /path/to/input.fastq -o /path/to/output_dir [options]
+    ```
+
+    *Make sure the launcher script has execute permissions:*
+
+    ```bash
+    chmod +x filterfastq
+    ```
+
+#### Option 2: Using the Main Script Directly
+
+1. **Ensure the Virtual Environment is Activated**
+
+    ```bash
+    source biopython_env/bin/activate
+    ```
+
+2. **Run the Main Script**
+
+    ```bash
+    python main.py -i /path/to/input.fastq -o /path/to/output_dir [options]
+    ```
+
+
+
+## Acknowledgement
+
+- Developed using [Biopython](https://biopython.org/)
+- Data visualization with [Matplotlib](https://matplotlib.org/)
+- Inspired by various open-source FASTQ processing tools.
+- This project is created for SIRE504 Programming in Bioinformatics.
+
 
 
 
