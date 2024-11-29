@@ -5,14 +5,14 @@
 FilterFASTQ is a Python program designed to filter and analyze FASTQ data effectively. It provides a statistical visualization to differentiate between the original and the filtered file by using a pie chart and generating  CSV files. In addition, it can be identified by a group of barcodes or barcode sequences as the user's preference. At the end of the program, it generates a new FASTQ file that passes the biological statistic criteria.
 
 
-## Project Structures( on the original machine)
-.
+## Project Structure( on the original machine)
+```plaintext
 filterfastq/
 ├── biopython_env/           # Virtual environment (excluded from Git)
-├── data/                    # Data directory (exclused from git)
-    |── ont.exp2.fastq
-    |── mock_gene_ex001.fastq # Generated from ont.exp2.fastq
-    |── mock_gene_ex002.fastq # Generated from ont.exp2.fastq
+├── data/                    # Data directory (excluded from git)
+│   │── ont.exp2.fastq
+│   │── mock_gene_ex001.fastq # Generated from ont.exp2.fastq
+│   │── mock_gene_ex002.fastq # Generated from ont.exp2.fastq
 ├── src/                     # Source code
 │   ├── parsing/
 │   │   └── parsing_fastq.py
@@ -20,10 +20,19 @@ filterfastq/
 │   │   └── statistic.py
 │   └── filter/
 │       └── filter.py
+│── test_output # Generate from ont.exp2.fastq (excluded from Git)
+│   │── original_statistic.csv
+│   │── filtered_statistic.csv
+│   │── filtered.fastq
+│   │── processing.log
+│   │── filterd_barcode_piechart.png
+│   │── original_barcode_piiechart.png
+│    
 ├── .gitignore               # Git ignore rules
 ├── filterfastq              # Launcher script
 ├── main.py                  # Main script
 ├── requirements.txt         # Python dependencies
+```
 
 ## Features
 
@@ -123,7 +132,6 @@ You can run the `filterfastq` tool using the provided launcher script or directl
     ```bash
     python main.py -i /path/to/input.fastq -o /path/to/output_dir [options]
     ```
-
 
 
 ## Acknowledgement
