@@ -6,7 +6,7 @@ FilterFASTQ is a Python program designed to filter and analyze FASTQ data effect
 
 
 ## Project Structures( on the original machine)
-
+.
 filterfastq/
 ├── biopython_env/           # Virtual environment (excluded from Git)
 ├── data/                    # Data directory (exclused from git)
