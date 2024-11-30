@@ -58,9 +58,7 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
             SeqIO.write(record, out_handle, "fastq")
             passed += 1
             
-            # Log progress every 100,000 sequences
-            # if total % 100000 == 0:
-            #     logging.info(f"Processed {total} sequences, {passed} passed so far.")
+
     
     logging.info(f"Filtering complete. Total sequences: {total}, Passed: {passed}, Failed: {total - passed}")
     return total, passed
