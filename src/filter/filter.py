@@ -8,9 +8,10 @@ def calculate_gc_content(seq):
     return (gc / len(seq)) * 100 if len(seq) > 0 else 0
 
 def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc_min=30, gc_max=60):
-    total = 0
-    passed = 0
-    
+    total = 0 # Set start total sequence values
+    passed = 0 # Set start passed sequence values
+
+   # Set up logging for each value for using in main
     if quality_threshold is None: 
         logging.info( f" Quality threshold  not detected. Default value is 20")
         quality_threshold = 20
