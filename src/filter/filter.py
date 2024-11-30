@@ -16,6 +16,19 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
         quality_threshold = 20
     else:
         logging.info(f"Quality threshold set to {quality_threshold}")
+       
+   if min_length is None:
+        logging.info(f" Minimum length not detected. Default value is 50")
+        min_length = 50
+    else:
+        logging.info(f"Minimum threshold set to {min_length}")
+    
+    if gc_min and gc_max is None:
+        logging.info (f"Minimum and Maximum GC content are not deteced. Default values are 30 and 60 respectively")
+    
+    else:
+        logging.info(f"Minimum GC content(%) set to {gc_min} and Maxiimum GC content(%) set to {gc_max}")
+
 
     with open(input_file, "r") as in_handle, open(output_file, "w") as out_handle:
         for record in SeqIO.parse(in_handle, "fastq"):
