@@ -2,6 +2,7 @@
 import sys
 from Bio import SeqIO
 import logging
+import gzip
 
 def calculate_gc_content(seq):
     gc = seq.count('G') + seq.count('C') + seq.count('g') + seq.count('c')
@@ -18,7 +19,7 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
     else:
         logging.info(f"Quality threshold set to {quality_threshold}")
        
-   if min_length is None:
+    if min_length is None:
         logging.info(f" Minimum length not detected. Default value is 50")
         min_length = 50
     else:
@@ -31,8 +32,14 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
         logging.info(f"Minimum GC content(%) set to {gc_min} and Maxiimum GC content(%) set to {gc_max}")
 
 
-    with open(input_file, "r") as in_handle, open(output_file, "w") as out_handle:
-        for record in SeqIO.parse(in_handle, "fastq"):
+    if input_file.endswith('.gz'):
+        input_handle= gzip.open(input_file,"rt")
+    else:
+        input_handle = open(input_file, "r")
+
+    with input_handle, open(output_file, "w") as out_handle:
+
+        for record in SeqIO.parse(input_handle, "fastq"):
             total += 1
             # Calculate average quality score
             qualities = record.letter_annotations.get("phred_quality",[])
