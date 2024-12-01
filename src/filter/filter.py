@@ -23,7 +23,7 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
         logging.info(f" Minimum length not detected. Default value is 50")
         min_length = 50
     else:
-        logging.info(f"Minimum threshold set to {min_length}")
+        logging.info(f"Minimum length set to {min_length}")
     
     if gc_min and gc_max is None:
         logging.info (f"Minimum and Maximum GC content are not deteced. Default values are 30 and 60 respectively")
