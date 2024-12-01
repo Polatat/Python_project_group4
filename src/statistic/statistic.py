@@ -1,6 +1,7 @@
 from collections import Counter
 from Bio import SeqIO
 import re
+import gzip
 
 class FastqStat:
     def __init__(self, filename):
@@ -8,8 +9,12 @@ class FastqStat:
 
     def read_fastq(self):
         """Reads the FASTQ file and returns a list of SeqRecord objects."""
-        with open(self.filename, 'r') as fastq_file:
-            return list(SeqIO.parse(fastq_file, "fastq"))
+        if self.filename.endswith('.gz'):
+            with gzip.open(self.filename,"rt") as fastq_file:
+                return list(SeqIO.parse(fastq_file,"fastq"))
+        else:
+            with open(self.filename, 'r') as fastq_file:
+                return list(SeqIO.parse(fastq_file, "fastq"))
 
     def sequence(self):
         """Return a list of sequence IDs from the FASTQ file."""
