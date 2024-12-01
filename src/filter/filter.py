@@ -67,7 +67,7 @@ def filter_fastq(input_file, output_file,quality_threshold=20, min_length=50, gc
             
 
     
-    logging.info(f"Filtering complete. Total sequences: {total}, Passed: {passed}, Failed: {total - passed}")
+    logging.info(f"Filtering completed.")
     return total, passed
 
 if __name__ == "__main__":
