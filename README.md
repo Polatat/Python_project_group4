@@ -53,7 +53,7 @@ filterfastq/
 ## Installation
 
 ### Prerequistes
-- **Python 3.6 or higher**
+- **Python 3.12.2 or higher**
 - **pip** (Python package installer)
 - **Git** (to clone the repository)
 
